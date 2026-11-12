@@ -1,0 +1,295 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Skilled Nursing Care</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<style>
+  /* Layout: sticky header, split hero with a facts panel, strengths strip, filterable home cards, values, contact directory. */
+  :root{
+    --bg:#f6f9fb; --surface:#ffffff; --ink:#10283d; --muted:#54677a; --line:#dbe4eb;
+    --accent:#177a8a; --accent-ink:#ffffff; --tint:#e4f1f3;
+    --deep:#0f2f47; --deep-2:#16506a; --deep-ink:#eaf2f7; --deep-muted:#b7cad8;
+    --hero-btn:#ffffff; --hero-btn-ink:#0f2f47;
+    --font-head:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1721; --surface:#12222e; --ink:#e8f0f5; --muted:#9db0bf; --line:#233646;
+      --accent:#4cb8c8; --accent-ink:#06222a; --tint:#14303a;
+      --deep:#08202f; --deep-2:#0e3a4c; --deep-ink:#eaf2f7; --deep-muted:#a9bfce;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b1721; --surface:#12222e; --ink:#e8f0f5; --muted:#9db0bf; --line:#233646;
+    --accent:#4cb8c8; --accent-ink:#06222a; --tint:#14303a;
+    --deep:#08202f; --deep-2:#0e3a4c; --deep-ink:#eaf2f7; --deep-muted:#a9bfce;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--font-head);line-height:1.15;text-wrap:balance;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+  /* header */
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:30}
+  header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap;padding-block:8px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:800;font-size:1.1rem}
+  .brand-mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center}
+  .nav-links{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .nav-links a.plain{color:var(--muted);font-weight:500;font-size:.95rem}
+  .nav-links a.plain:hover{color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);padding:12px 22px;border-radius:10px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;font-family:inherit;transition:transform .15s,opacity .15s}
+  .btn:hover{opacity:.9;transform:translateY(-1px)}
+  .btn.light{background:var(--hero-btn);color:var(--hero-btn-ink)}
+  .btn.ghost{background:transparent;color:var(--deep-ink);border:1px solid rgba(255,255,255,.35)}
+
+  /* hero */
+  .hero{background:linear-gradient(120deg,var(--deep) 0%,var(--deep-2) 100%);color:var(--deep-ink);padding-block:84px 88px}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+  .hero .eyebrow{color:#8fd3df}
+  .hero h1{font-size:clamp(2.1rem,5vw,3.6rem);margin:14px 0 20px;max-width:16ch}
+  .hero p.lead{color:var(--deep-muted);font-size:1.12rem;max-width:56ch;margin-bottom:32px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .facts{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:8px 26px;min-width:0}
+  .fact{display:flex;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .fact:last-child{border-bottom:0}
+  .fact b{font-family:var(--font-head);font-size:2.3rem;font-weight:800;line-height:1;min-width:2.2ch;font-variant-numeric:tabular-nums}
+  .fact span{color:var(--deep-muted);font-size:.95rem;line-height:1.35}
+
+  section{padding-block:84px}
+  .section-head{max-width:640px;margin-bottom:40px;display:flex;flex-direction:column;gap:10px}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem)}
+  .section-head p{color:var(--muted)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .about-grid h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin:10px 0 16px}
+  .about-grid .big{font-size:1.2rem;color:var(--ink);max-width:46ch}
+  .about-panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:14px;color:var(--muted)}
+  .about-panel p:first-child{color:var(--ink);font-weight:500}
+
+  /* strengths */
+  .strengths{background:var(--surface);border-block:1px solid var(--line);padding-block:56px}
+  .strength-row{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+  .strength{display:flex;flex-direction:column;gap:12px;min-width:0}
+  .strength .ico{width:44px;height:44px;border-radius:12px;background:var(--tint);color:var(--accent);display:grid;place-items:center}
+  .strength p{font-weight:600;font-size:.95rem;line-height:1.4}
+
+  /* homes */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+  .chip{font-family:inherit;font-size:.9rem;font-weight:500;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .homes{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+  .home{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+  .home .tag{align-self:flex-start;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--tint);padding:4px 10px;border-radius:999px}
+  .home h3{font-size:1.08rem;line-height:1.3}
+  .home address{font-style:normal;color:var(--muted);font-size:.93rem;line-height:1.5;margin-top:auto}
+
+  /* values */
+  .values-wrap{background:var(--surface);border-block:1px solid var(--line)}
+  .values{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .value{padding:6px 0;display:flex;flex-direction:column;gap:10px;min-width:0}
+  .value b{font-family:var(--font-head);font-size:3.6rem;font-weight:800;line-height:1;color:var(--accent)}
+  .value h3{font-size:1.15rem}
+  .value p{color:var(--muted)}
+
+  /* contact */
+  .contact{background:linear-gradient(120deg,var(--deep) 0%,var(--deep-2) 100%);color:var(--deep-ink)}
+  .contact .eyebrow{color:#8fd3df}
+  .contact .section-head p{color:var(--deep-muted)}
+  .directory{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:16px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;min-width:520px}
+  th,td{text-align:left;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.12);font-size:.95rem}
+  th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--deep-muted);font-weight:600}
+  tr:last-child td{border-bottom:0}
+  td.num{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap;user-select:all}
+  td.loc{color:var(--deep-muted)}
+  .copy{font-family:inherit;font-size:.8rem;font-weight:600;background:transparent;color:var(--deep-ink);border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:6px 12px;cursor:pointer}
+  .copy:hover{background:rgba(255,255,255,.12)}
+  .contact-note{margin-top:16px;color:var(--deep-muted);font-size:.9rem}
+
+  footer{background:var(--deep);color:var(--deep-muted);padding-block:26px;font-size:.9rem;border-top:1px solid rgba(255,255,255,.1)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  @media (max-width:900px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:32px}
+    .strength-row{grid-template-columns:repeat(2,1fr)}
+    .values{grid-template-columns:1fr;gap:26px}
+    section{padding-block:60px}
+    .hero{padding-block:56px 60px}
+  }
+  @media (max-width:520px){
+    .nav-links a.plain{display:none}
+    .fact b{font-size:2rem}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Skilled Nursing Care home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </span>
+      Skilled Nursing Care
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="plain" href="#top">Home</a>
+      <a class="plain" href="#about">About</a>
+      <a class="plain" href="#homes">Our Homes</a>
+      <a class="btn" href="#contact">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Long-term and short-term care</span>
+        <h1>Building Better Outcomes in Skilled Nursing Care</h1>
+        <p class="lead">With multiple years of operational excellence and a growing network of nursing homes, we are committed to delivering compassionate long-term and short-term care across communities.</p>
+        <div class="hero-actions">
+          <a class="btn light" href="#contact">Contact Us</a>
+          <a class="btn ghost" href="#homes">Find a Home</a>
+        </div>
+      </div>
+      <div class="facts" aria-label="At a glance">
+        <div class="fact"><b>8</b><span>owned and operated nursing homes</span></div>
+        <div class="fact"><b>2</b><span>states served, Ohio and Rhode Island</span></div>
+        <div class="fact"><b>10</b><span>years of leadership in skilled nursing and senior care</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">About us</span>
+        <h2>Trusted in skilled nursing and senior care</h2>
+        <p class="big">For 10 years, we have been trusted for our leadership in skilled nursing and senior care.</p>
+      </div>
+      <div class="about-panel">
+        <p>Our team focuses on enhancing quality standards, improving resident experience, and ensuring safe, compliant, and well-managed facilities.</p>
+        <p>Every decision we make starts with one question: what is best for the people who call our homes their own?</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="strengths">
+    <div class="wrap">
+      <div class="strength-row">
+        <div class="strength"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><p>Multiple years of industry experience</p></div>
+        <div class="strength"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><p>Strong reputation in nursing home care</p></div>
+        <div class="strength"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><p>Comprehensive compliance</p></div>
+        <div class="strength"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15.5 14.2c3 .3 5.5 2.6 5.5 5.8"/></svg></span><p>Team focused on outcomes</p></div>
+        <div class="strength"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5"/></svg></span><p>Scalable infrastructure</p></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="homes">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our network of homes</span>
+        <h2>Eight homes, one standard of care</h2>
+        <p>With many owned and operated nursing homes, our dedicated team brings consistent oversight, strong clinical leadership, and proven operational systems. Each location follows the same commitment: dignity, respect, and exceptional care for every resident.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter homes by state">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All homes</button>
+        <button class="chip" type="button" data-filter="OH" aria-pressed="false">Ohio</button>
+        <button class="chip" type="button" data-filter="RI" aria-pressed="false">Rhode Island</button>
+      </div>
+      <div class="homes">
+        <article class="home" data-state="OH"><span class="tag">Beachwood, OH</span><h3>Beachwood Pointe Care Center</h3><address>23900 Chagrin Blvd<br>Beachwood, OH 44122</address></article>
+        <article class="home" data-state="OH"><span class="tag">North Randall, OH</span><h3>Suburban Healthcare and Rehabilitation</h3><address>20265 Emery Rd<br>North Randall, OH 44128</address></article>
+        <article class="home" data-state="OH"><span class="tag">Cincinnati, OH</span><h3>Mt Washington Care Center</h3><address>6900 Beechmont Ave<br>Cincinnati, OH 45230</address></article>
+        <article class="home" data-state="OH"><span class="tag">Kettering, OH</span><h3>The Oaks of West Kettering</h3><address>1150 W Dorothy Ln<br>Kettering, OH 45409</address></article>
+        <article class="home" data-state="OH"><span class="tag">Cincinnati, OH</span><h3>Mt Airy Gardens Rehabilitation and Nursing Center</h3><address>2250 Banning Rd<br>Cincinnati, OH 45239</address></article>
+        <article class="home" data-state="OH"><span class="tag">Youngstown, OH</span><h3>Oasis Center for Rehabilitation and Healing</h3><address>850 E Midlothian Blvd<br>Youngstown, OH 44507</address></article>
+        <article class="home" data-state="OH"><span class="tag">Youngstown, OH</span><h3>Beeghly Oaks Center for Rehabilitation &amp; Healing</h3><address>6505 Market St<br>Youngstown, OH 44512</address></article>
+        <article class="home" data-state="RI"><span class="tag">Pascoag, RI</span><h3>Crystal Lake Rehabilitation and Care Center</h3><address>999 S Main St<br>Pascoag, RI 02859</address></article>
+      </div>
+    </div>
+  </section>
+
+  <div class="values-wrap">
+    <section id="values">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">What guides us</span>
+          <h2>Three commitments behind every decision</h2>
+        </div>
+        <div class="values">
+          <div class="value"><b>P</b><h3>Protect</h3><p>Protect every resident's dignity, safety, and quality of life.</p></div>
+          <div class="value"><b>I</b><h3>Invest</h3><p>Invest in staff so they feel valued, supported, and proud of their work.</p></div>
+          <div class="value"><b>C</b><h3>Create</h3><p>Create a warm, respectful home environment for every resident.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Contact us</span>
+        <h2>Ready to learn more or discuss opportunities?</h2>
+        <p>Our team is here to support your goals in quality resident care. Call the home nearest you.</p>
+      </div>
+      <div class="directory">
+        <table>
+          <thead><tr><th scope="col">Home</th><th scope="col">Location</th><th scope="col">Phone</th><th scope="col"><span class="sr">Copy</span></th></tr></thead>
+          <tbody>
+            <tr><td>Beachwood Pointe Care Center</td><td class="loc">Beachwood, OH</td><td class="num"><a href="tel:+12164641000">(216) 464-1000</a></td><td><button class="copy" type="button" data-num="(216) 464-1000">Copy</button></td></tr>
+            <tr><td>Suburban Healthcare and Rehabilitation</td><td class="loc">North Randall, OH</td><td class="num"><a href="tel:+12164758880">(216) 475-8880</a></td><td><button class="copy" type="button" data-num="(216) 475-8880">Copy</button></td></tr>
+            <tr><td>Mt Washington Care Center</td><td class="loc">Cincinnati, OH</td><td class="num"><a href="tel:+15132314561">(513) 231-4561</a></td><td><button class="copy" type="button" data-num="(513) 231-4561">Copy</button></td></tr>
+            <tr><td>The Oaks of West Kettering</td><td class="loc">Kettering, OH</td><td class="num"><a href="tel:+19372931152">(937) 293-1152</a></td><td><button class="copy" type="button" data-num="(937) 293-1152">Copy</button></td></tr>
+            <tr><td>Mt Airy Gardens Rehabilitation and Nursing Center</td><td class="loc">Cincinnati, OH</td><td class="num"><a href="tel:+15135910400">(513) 591-0400</a></td><td><button class="copy" type="button" data-num="(513) 591-0400">Copy</button></td></tr>
+            <tr><td>Oasis Center for Rehabilitation and Healing</td><td class="loc">Youngstown, OH</td><td class="num"><a href="tel:+13307883038">(330) 788-3038</a></td><td><button class="copy" type="button" data-num="(330) 788-3038">Copy</button></td></tr>
+            <tr><td>Beeghly Oaks Center for Rehabilitation &amp; Healing</td><td class="loc">Youngstown, OH</td><td class="num"><a href="tel:+13308842300">(330) 884-2300</a></td><td><button class="copy" type="button" data-num="(330) 884-2300">Copy</button></td></tr>
+            <tr><td>Crystal Lake Rehabilitation and Care Center</td><td class="loc">Pascoag, RI</td><td class="num"><a href="tel:+14015683091">(401) 568-3091</a></td><td><button class="copy" type="button" data-num="(401) 568-3091">Copy</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="contact-note">Tap a number to call, or copy it.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2021 | All rights reserved</div>
+</footer>
+
+<script>
+  (function(){
+    var chips=document.querySelectorAll('.chip'), homes=document.querySelectorAll('.home');
+    chips.forEach(function(c){
+      c.addEventListener('click',function(){
+        var f=c.getAttribute('data-filter');
+        chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});
+        homes.forEach(function(h){h.hidden=!(f==='all'||h.getAttribute('data-state')===f)});
+      });
+    });
+    document.querySelectorAll('.copy').forEach(function(b){
+      b.addEventListener('click',function(){
+        var n=b.getAttribute('data-num'), done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)};
+        try{
+          navigator.clipboard.writeText(n).then(done,function(){selectNum(b)});
+        }catch(e){selectNum(b)}
+      });
+    });
+    function selectNum(b){
+      var cell=b.closest('tr').querySelector('.num'), r=document.createRange();
+      r.selectNodeContents(cell);var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+    }
+  })();
+</script>
+
+</body></html>
